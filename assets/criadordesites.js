@@ -172,7 +172,6 @@ window.onload = galleryNavigation.init;
   return module;
 })(fullImageContainer || {});
 
- /* Yata Editor v1.6.0 | vendor/js */
 
 /* globals fullImageContainer PhotoSwipe PhotoSwipeUI_Default */
 
