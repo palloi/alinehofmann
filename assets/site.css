@@ -80,24 +80,60 @@
   padding: 0 16px 12px;
 }
 
+.hero-actions .cs-button-widget {
+  display: flex !important;
+  justify-content: center;
+  width: auto !important;
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
+.cs-button,
+a.cs-button,
+.cs-button-widget .cs-button,
 .btn-whatsapp,
-a.btn-whatsapp {
-  display: inline-flex;
+a.btn-whatsapp,
+.btn-secondary,
+a.btn-secondary {
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
+  box-sizing: border-box;
   min-height: 48px;
-  min-width: 48px;
   padding: 12px 22px;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  vertical-align: middle;
+}
+
+.cs-button span,
+.btn-whatsapp span,
+.btn-secondary span,
+.footer-whatsapp span {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.icon-whatsapp {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display: block;
+}
+
+.btn-whatsapp,
+a.btn-whatsapp {
+  min-width: 48px;
   background: var(--hof-whatsapp);
   color: var(--hof-white) !important;
   border-radius: 28px;
   font-family: "Open Sans", sans-serif;
   font-size: 15px;
   font-weight: 700;
-  line-height: 1.2;
-  text-decoration: none;
-  text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
 }
 
@@ -112,18 +148,12 @@ a.btn-whatsapp:focus {
 
 .btn-secondary,
 a.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 10px 22px;
   background: var(--hof-rose);
   color: var(--hof-white) !important;
   border-radius: 28px;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 700;
-  text-decoration: none;
 }
 
 .btn-secondary:hover,
@@ -229,6 +259,15 @@ a.btn-secondary:focus {
   min-height: 48px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  line-height: 1.25;
+  padding: 8px 10px;
+}
+
+.footer-whatsapp .icon-whatsapp {
+  color: #0b6e34;
 }
 
 .maps-embed {
@@ -287,15 +326,54 @@ a.btn-secondary:focus {
 }
 
 .cs-social-widget a {
-  min-width: 48px;
-  min-height: 48px;
+  min-width: 44px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 2px;
+}
+
+.cs-social-widget svg {
+  width: 40px;
+  height: 40px;
+  display: block;
 }
 
 .instagram-embed-host {
   min-height: 120px;
+}
+
+#avaliacoes .cs-section-inner {
+  background-color: #ffffff;
+}
+
+#avaliacoes .section-title {
+  text-align: center;
+}
+
+.avaliacoes-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 16px 36px;
+  text-align: center;
+}
+
+.avaliacoes-copy {
+  color: var(--hof-ink) !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  max-width: 36rem;
+  margin: 8px auto 0;
+}
+
+.avaliacoes-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
 }
 
 @media only screen and (max-width: 767px) {
