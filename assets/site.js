@@ -32,20 +32,6 @@
         btn.setAttribute("aria-label", "Ver próximo resultado");
       }
     });
-    document.querySelectorAll(".cs-gallery .item-full").forEach(function (el) {
-      el.classList.remove("item-full");
-    });
-    document.querySelectorAll("img.owl-lazy, img.resultado-img").forEach(function (img) {
-      if (img.getAttribute("data-src") && !img.getAttribute("src")) {
-        img.setAttribute("src", img.getAttribute("data-src"));
-      }
-      img.addEventListener("load", function () {
-        img.classList.add("loaded");
-      });
-      if (img.complete && img.naturalWidth) {
-        img.classList.add("loaded");
-      }
-    });
   }
 
   window.addEventListener("load", function () {
