@@ -3,6 +3,25 @@
 
   var WA_SELECTOR = 'a[data-whatsapp], a[href*="api.whatsapp.com"], a[href*="wa.me"]';
 
+  var PROCEDURE_CONTENT = {
+    "/harmonizacao-orofacial/bioestimuladores-de-colageno/": "Bioestimuladores de colágeno",
+    "/harmonizacao-orofacial/fios-de-pdo/": "Fios de PDO",
+    "/harmonizacao-orofacial/microagulhamento-com-ativos/": "Microagulhamento com ativos",
+    "/harmonizacao-orofacial/preenchimento-acido-hialuronico/": "Preenchimento com ácido hialurônico",
+    "/harmonizacao-orofacial/skinbooster/": "Skinbooster",
+    "/harmonizacao-orofacial/toxina-botulinica/": "Toxina botulínica"
+  };
+
+  function procedurePath() {
+    return window.location.pathname.replace(/\/index\.html$/, "/").replace(/\/?$/, "/");
+  }
+
+  function trackViewContent() {
+    var contentName = PROCEDURE_CONTENT[procedurePath()];
+    if (!contentName || typeof fbq !== "function") return;
+    fbq("track", "ViewContent", { content_name: contentName });
+  }
+
   function trackWhatsApp(href) {
     if (typeof gtag === "function") {
       gtag("event", "generate_lead", {
@@ -15,6 +34,9 @@
         link_url: href || ""
       });
     }
+    if (typeof fbq === "function") {
+      fbq("track", "Contact");
+    }
   }
 
   document.addEventListener("click", function (event) {
@@ -22,6 +44,8 @@
     if (!link) return;
     trackWhatsApp(link.href);
   });
+
+  trackViewContent();
 
   function enhanceCarouselNav() {
     document.querySelectorAll(".owl-nav button").forEach(function (btn) {
